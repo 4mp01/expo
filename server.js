@@ -1,10 +1,8 @@
 
 const express = require('express')
 const app = express()
-const bodyParser = require("body-parser");
 const server = require('http').Server(app);
 const io = require('socket.io')(server)
-const request = require("request");
 const path = require('path')
 require('dotenv/config')
 
@@ -54,32 +52,3 @@ io.on('connection', socket => {
 server.listen(process.env.PORT || 9999, () => {
   console.log("Listening to port: "+ process.env.PORT || 9999 )
 })
-
-// HEROKU WEBHOOK
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-
-app.post("/webhook", async (req, res) => {
- const Payload = req.body;
-//Respond To Heroku Webhook
- res.sendStatus(200);
-
- const options = {
-  method: "POST",
-  url:
-   "https://discord.com/api/webhooks/981901122757337198/aWmE2XQVoXKmK5z-0MSl6-6F7ZMxasauRLp_ziRPuZR0Z5RYiZ-N2tGyekJmRCrQ21bm",
-  headers: {
-   "Content-type": "application/json",
-  },
-//Format JSON DATA
-  body: JSON.stringify({
-   content: `This is A Webhook notification!A build for your app ${Payload.data.app.name} was just triggered`,
-  }),
- };
- request(options, function (error, response) {
-  if (error) throw new Error(error);
-  console.log(response);
- });
-});
-app.listen(process.env.PORT || 9999, () => console.log("App is running on port 3000!"));
