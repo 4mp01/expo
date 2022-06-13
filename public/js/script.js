@@ -1,5 +1,5 @@
 
-const socket = io('http://localhost:1999')
+const socket = io('https://amphoteric.herokuapp.com/')
 const messageContainer = document.getElementById('message-container')
 const roomContainer = document.getElementById('room-container')
 const messageForm = document.getElementById('send-container')
