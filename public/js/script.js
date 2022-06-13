@@ -7,7 +7,7 @@ const messageInput = document.getElementById('message-input')
 
 if (messageForm != null) {
   const name = prompt('What is your name?')
-  appendMessage('You joined')
+  appendMessage(`${name} joined`)
   socket.emit('new-user', name)
 
   messageForm.addEventListener('submit', e => {
@@ -15,12 +15,13 @@ if (messageForm != null) {
       alert('Input something')
     } else {
       const message = messageInput.value
-      appendMessage(`You: ${message}`)
+      appendMessage(`${name}: ${message}`)
       socket.emit('send-chat-message', message)
       messageInput.value = ''
-    }
+    } 
     e.preventDefault()
   })
+
 }
 
 socket.on('room-created', room => {

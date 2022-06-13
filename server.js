@@ -49,6 +49,6 @@ io.on('connection', socket => {
 
 })
 
-server.listen(process.env.PORT || 9999, () => {
-  console.log("Listening to port: "+ process.env.PORT || 9999 )
+server.listen(9999, () => {
+  console.log("Listening to port: "+ 9999 )
 })

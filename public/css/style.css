@@ -1,6 +1,16 @@
 
 * { background-color:#191919; color:white; margin:0; }
 
-#room-container { text-align:center; }
+img
+{
+    margin-top:13px;
+    margin-left:13px;
+    border-radius: 5px;
+}
 
-#input-room { text-align: center; }
+#room-container { margin-top:13px; margin-left:13px; margin-left:100px; background-color: green; }
+
+.room { background-color: green; }
+
+.bg { height:101%; margin-top:12px; margin-left:13px; background-color: green; border-radius: 5px; display: inline-block; }
+

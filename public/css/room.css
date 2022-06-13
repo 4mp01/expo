@@ -1,6 +1,29 @@
 
 * { background-color:#191919; color:white; margin:0; }
 
-#message-container { text-align:center; font-size:18px; margin-top:40vh;}
+#message
+{ 
+    
+}
 
-#send-container { text-align:center; top:50vh;  }
+#message-container 
+{ 
+    top:10px; 
+    left: 10px; 
+    position: absolute; 
+    text-align:center; 
+}
+
+#send 
+{ 
+
+    text-align: center;
+    position:relative;
+    top:88vh; 
+
+}
+
+#send-container {
+
+
+}
