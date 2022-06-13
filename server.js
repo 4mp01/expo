@@ -33,10 +33,6 @@ app.get('/:room', (req, res) => {
   res.render('room', {roomName: req.params.room})
 })
 
-server.listen(process.env.PORT, () => {
-  console.log("Listening to port: "+ process.env.PORT)
-})
-
 const users = {}
 
 io.on('connection', socket => {
@@ -53,6 +49,10 @@ io.on('connection', socket => {
     delete users[socket.id]
   })
 
+})
+
+server.listen(process.env.PORT || 9999, () => {
+  console.log("Listening to port: "+ process.env.PORT || 9999 )
 })
 
 // HEROKU WEBHOOK
@@ -82,5 +82,4 @@ app.post("/webhook", async (req, res) => {
   console.log(response);
  });
 });
-
-app.listen(process.env.PORT, () => { console.log("Listening to port: "+ process.env.PORT) })
+app.listen(process.env.PORT || 9999, () => console.log("App is running on port 3000!"));
