@@ -1,9 +1,12 @@
 
 const express = require('express')
 const app = express()
-const server = require('http').Server(app)
+const bodyParser = require("body-parser");
+const server = require('http').Server(app);
 const io = require('socket.io')(server)
+const request = require("request");
 const path = require('path')
+require('dotenv/config')
 
 app.set('views', './views')
 app.set('view engine', 'ejs')
@@ -30,8 +33,8 @@ app.get('/:room', (req, res) => {
   res.render('room', {roomName: req.params.room})
 })
 
-server.listen(1999, () => {
-  console.log("RUNNING")
+server.listen(process.env.PORT, () => {
+  console.log("Listening to port: "+ process.env.PORT)
 })
 
 const users = {}
@@ -51,3 +54,33 @@ io.on('connection', socket => {
   })
 
 })
+
+// HEROKU WEBHOOK
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.post("/webhook", async (req, res) => {
+ const Payload = req.body;
+//Respond To Heroku Webhook
+ res.sendStatus(200);
+
+ const options = {
+  method: "POST",
+  url:
+   "https://discord.com/api/webhooks/981901122757337198/aWmE2XQVoXKmK5z-0MSl6-6F7ZMxasauRLp_ziRPuZR0Z5RYiZ-N2tGyekJmRCrQ21bm",
+  headers: {
+   "Content-type": "application/json",
+  },
+//Format JSON DATA
+  body: JSON.stringify({
+   content: `This is A Webhook notification!A build for your app ${Payload.data.app.name} was just triggered`,
+  }),
+ };
+ request(options, function (error, response) {
+  if (error) throw new Error(error);
+  console.log(response);
+ });
+});
+
+app.listen(process.env.PORT, () => { console.log("Listening to port: "+ process.env.PORT) })
