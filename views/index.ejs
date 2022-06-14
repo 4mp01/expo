@@ -21,26 +21,27 @@
 
   <body>
 
-    <div id="head_div">
-      
+    <div class="head_div">
+      <img class="head_img" src="../public/img/head.jpg">
     </div>
 
-    <div class="bg">
+    <div id="rni">
 
-      <div id="room-container">
+      <div class="room-container">
         <h1>ROOMS:</h1>
         <% Object.keys(rooms).forEach(room => { %>
-          <div class="room"><%= room %></div>
+          <div class="room"><h2><%= room %></h2></div>
           <a class="room" href="/<%= room %>">Join</a><br><br>
         <% })%>
       </div>
 
-      <div id="input-container">
+      <div class="input-container">
         <form id="input-room" action="/room" method="POST">
           <input name="room" type="text" id="input" required>
           <button type="submit">New Room</button>
         </form>
       </div>
+
     </div>
 
     <div id="center-content">
