@@ -7,29 +7,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Amphoteric</title>
+    <link rel="icon" href="../public/img/logo.jpg"/>
     <link 
       rel="stylesheet"
       href="../public/css/style.css"
     />
-    <script defer src="https://amphoteric.herokuapp.com/socket.io/socket.io.js"></script>
+    <script defer src="https://www.amphoteric.herokuapp.com/socket.io/socket.io.js"></script>
     <script defer src="../public/js/script.js"></script>
 
   </head>
 
   <body>
 
-    <div id="room-container">
-      <% Object.keys(rooms).forEach(room => { %>
-        <div><%= room %></div>
-        <a href="/<%= room %>">Join</a>
-      <% })%>
+    <div id="head_div">
+      
     </div>
 
-    <form id="input-room" action="/room" method="POST">
-      <input name="room" type="text" required>
-      <button type="submit">New Room</button>
-    </form>
+    <div class="bg">
+
+      <div id="room-container">
+        <h1>ROOMS:</h1>
+        <% Object.keys(rooms).forEach(room => { %>
+          <div class="room"><%= room %></div>
+          <a class="room" href="/<%= room %>">Join</a><br><br>
+        <% })%>
+      </div>
+
+      <div id="input-container">
+        <form id="input-room" action="/room" method="POST">
+          <input name="room" type="text" id="input" required>
+          <button type="submit">New Room</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="center-content">
+
+    </div>
 
   </body>
 </html>
