@@ -8,6 +8,7 @@ const messageInput = document.getElementById('message-input')
 if (messageForm != null) {
   
   const name = prompt('What is your name?')
+<<<<<<< HEAD
   
   if (name == '') {
 
@@ -38,6 +39,23 @@ if (messageForm != null) {
   } else {
     alert('Reload The Site And Enter your name!')
   }
+=======
+  appendMessage(`${name} joined`)
+  socket.emit('new-user', name)
+
+  messageForm.addEventListener('submit', e => {
+    if (messageInput.value == '') {
+      alert('Input something')
+    } else {
+      const message = messageInput.value
+      appendMessage(`${name}: ${message}`)
+      socket.emit('send-chat-message', message)
+      messageInput.value = ''
+    } 
+    e.preventDefault()
+  })
+
+>>>>>>> 01772b8dd9d17f48eb11b7a5aea504d8fcda4778
 }
 
 socket.on('room-created', room => {

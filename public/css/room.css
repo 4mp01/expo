@@ -1,6 +1,7 @@
 
 * { background-color:#191919; color:white; margin:0; }
 
+<<<<<<< HEAD
 #message-container 
 { 
     top:10px; 
@@ -9,6 +10,21 @@
     text-align:center; 
 }
 
+=======
+#message
+{ 
+    
+}
+
+#message-container 
+{ 
+    top:10px; 
+    left: 10px; 
+    position: absolute; 
+    text-align:center; 
+}
+
+>>>>>>> 01772b8dd9d17f48eb11b7a5aea504d8fcda4778
 #send 
 { 
 
@@ -18,7 +34,13 @@
 
 }
 
+<<<<<<< HEAD
 .mnt
 {
     display: contents;
+=======
+#send-container {
+
+
+>>>>>>> 01772b8dd9d17f48eb11b7a5aea504d8fcda4778
 }
