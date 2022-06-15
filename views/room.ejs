@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Amphoteric</title>
-    <link rel="icon" href="../public/img/logo.jpg"/>
+    <link rel="icon" href="../public/img/logo.jpg" />
     <link 
     rel="stylesheet"
     href="../public/css/room.css"
@@ -16,7 +16,9 @@
     <script defer src="https://amphoteric.herokuapp.com/socket.io/socket.io.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
     <script defer type="module" src="../public/js/script.js"></script>
-
+    <script>
+      const roomName = "<%= roomName %>"
+    </script>
   </head>
 
   <body>

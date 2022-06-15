@@ -15,7 +15,6 @@
 }
 
 #center-content {
-    top: 0;
     left: 5px;
     width: 85.1%;
     height: 40.5rem;
@@ -24,11 +23,18 @@
     position: relative;
     display: inline-block;
     text-align: center;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+#contents
+{
+    text-align: left;
+    position: absolute;
 }
 
 .room-container 
 {
-
     width: 255px;
     height: 38.7rem;
     overflow: auto;
@@ -42,8 +48,8 @@
 
 .input-container 
 {
-    top: 63.1vh;
-    left: 3px;
+    left: 5px;
+    bottom: 8px;
     position: relative;
     display: inline-block;
 }

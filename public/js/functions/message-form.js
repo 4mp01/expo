@@ -1,9 +1,5 @@
 
-import { 
-    socket, 
-    messageForm, 
-    messageInput
-} from "../export.js" 
+import { socket, messageForm, messageInput } from "../export.js" 
 
 import appendMessage from "./append-message.js"
 
@@ -20,7 +16,7 @@ export default function messageform() {
       } else if (name != null) {
       
         appendMessage(`<h2>${name} joined</h2>`)
-        socket.emit('new-user', name)
+        socket.emit('new-user', roomName, name)
       
         messageForm.addEventListener('submit', e => {
           if (messageInput.value == '') {
@@ -34,7 +30,7 @@ export default function messageform() {
             const ampm = 0 <= dateHours || dateHours >= 12 ? ' am' : ' pm';
       
             appendMessage(`<br><h3 class='h3'>${name}</h3> <h3 class='mnt' id='message_txt'> ${message}</h3> ${' at ' + dateHours + ':' + dateMinutes + ampm}`)
-            socket.emit('send-chat-message', message)
+            socket.emit('send-chat-message', roomName, message)
             messageInput.value = ''
           } 
           e.preventDefault()
