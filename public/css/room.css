@@ -1,24 +1,51 @@
 
-* { background-color:#191919; color:white; margin:0; }
+* { background-color:#191919; color:#98ff00; margin:0; }
 
-#message-container 
-{ 
-    top:10px; 
-    left: 10px; 
-    position: absolute; 
-    text-align:center; 
+#message 
+{
+    width: 80%;
+    height: 95.5%;
+    border: solid #98ff00 5px;
+    position: absolute;
+    display: inline-block;
+    overflow: auto;
+    overflow-x: hidden;
+    display: block;
 }
 
-#send 
-{ 
+#send-container
+{
+    top:54rem;
+    position: relative;
+    display: block;
+}
 
-    text-align: center;
-    position:relative;
-    top:88vh; 
+#message-input
+{
+    width:70%;
+    position: relative;
+    display: inline-block;
+}
 
+#send-button {
+    width:9.9%;
+    position: relative;
+    display: inline-block;
 }
 
 .mnt
 {
+    position: relative;
     display: contents;
+}
+
+#user-list 
+{
+    top:0;
+    left: 80.9%;
+    width: 18.2%;
+    height: 99%;
+    position: absolute;
+    text-align: center;
+    border: solid #98ff00 5px; 
 }

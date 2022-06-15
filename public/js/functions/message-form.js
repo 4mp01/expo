@@ -33,7 +33,7 @@ export default function messageform() {
             const dateMinutes = new Date().getMinutes()
             const ampm = 0 <= dateHours || dateHours >= 12 ? ' am' : ' pm';
       
-            appendMessage(`<br><h3 class='h3'>${name}</h3> <h3 class='mnt'>${message}</h3> ${' at ' + dateHours + ':' + dateMinutes + ampm}`)
+            appendMessage(`<br><h3 class='h3'>${name}</h3> <h3 class='mnt' id='message_txt'> ${message}</h3> ${' at ' + dateHours + ':' + dateMinutes + ampm}`)
             socket.emit('send-chat-message', message)
             messageInput.value = ''
           } 

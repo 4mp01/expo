@@ -13,7 +13,7 @@
       rel="stylesheet"
       href="../public/css/style.css"
     />
-    <script defer src="https://amphoteric.herokuapp.com/socket.io/socket.io.js"></script>
+    <script defer src="http://localhost:9999/socket.io/socket.io.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
     <script defer type="module" src="../public/js/script.js"></script>
 
@@ -25,27 +25,23 @@
       <img class="head_img" src="../public/img/head.jpg">
     </div>
 
-    <div id="rni">
-
-      <div class="room-container">
-        <h1>ROOMS:</h1>
-        <% Object.keys(rooms).forEach(room => { %>
-          <div class="room"><h2><%= room %></h2></div>
-          <a class="room" href="/<%= room %>">Join</a><br><br>
-        <% })%>
-      </div>
-
-      <div class="input-container">
-        <form id="input-room" action="/room" method="POST">
-          <input name="room" type="text" id="input" required>
-          <button type="submit">New Room</button>
-        </form>
-      </div>
-
+    <div id="center-content">
+      <h1>WELCOME TO AMPHOTERIC</h1>
     </div>
 
-    <div id="center-content">
+    <div class="room-container">
+      <h1>ROOMS:</h1>
+      <% Object.keys(rooms).forEach(room => { %>
+        <div class="room"><h2><%= room %></h2></div>
+        <a class="room" href="/<%= room %>">Join</a><br><br>
+      <% })%>
+    </div>
 
+    <div class="input-container">
+      <form id="input-room" action="/room" method="POST">
+        <input name="room" type="text" id="input" required>
+        <button type="submit">New Room</button>
+      </form>
     </div>
 
   </body>

@@ -13,7 +13,7 @@
     rel="stylesheet"
     href="../public/css/room.css"
     />
-    <script defer src="https://amphoteric.herokuapp.com/socket.io/socket.io.js"></script>
+    <script defer src="http://localhost:9999/socket.io/socket.io.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
     <script defer type="module" src="../public/js/script.js"></script>
 
@@ -27,15 +27,15 @@
 
     </div>
 
-
-    <div id="send">
-
       <form id="send-container">
         <input type="text" id="message-input">
         <button type="submit" id="send-button">Send</button>
       </form>
 
-    </div>
-
   </body>
+
+  <div id="user-list">
+    <h1>Users:</h1>
+  </div>
+
 </html>
