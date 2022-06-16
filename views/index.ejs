@@ -11,6 +11,7 @@
     <link rel="icon" href="../public/img/logo.jpg"/>
     <link 
       rel="stylesheet"
+      type="text/css"
       href="../public/css/style.css"
     />
     <script defer src="https://amphoteric.herokuapp.com/socket.io/socket.io.js"></script>
@@ -25,15 +26,14 @@
       <img class="head_img" src="../public/img/head.jpg">
     </div>
 
-    <div id="center-content">
-      <h1>WELCOME TO AMPHOTERIC</h1>
-      <div id="contents">
-        # CSS only support 1980 x 1080 yet.
+    <div class="center-content">
+      <div class="contents">
+        <h1>WELCOME TO AMPHOTERIC</h1>
+        # The website only support 1980 x 1080 yet.
       </div>
     </div>
 
     <div class="room-container">
-      <h1>ROOMS:</h1>
       <% Object.keys(rooms).forEach(room => { %>
         <div class="room"><h2><%= room %></h2></div>
         <a class="room" href="/<%= room %>">Join</a><br><br>

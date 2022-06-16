@@ -14,7 +14,7 @@
     border: solid #98ff00 3px;
 }
 
-#center-content {
+.center-content {
     left: 5px;
     width: 85.1%;
     height: 40.5rem;
@@ -22,15 +22,20 @@
     border: solid #98ff00 3px;
     position: relative;
     display: inline-block;
-    text-align: center;
     overflow: auto;
     overflow-x: hidden;
+    object-fit: cover;
+    background-position-y: 70%;
+    background-size: 100%, 100%;
+    background-repeat: no-repeat;
+    background-image: url('../img/a.gif');
 }
 
-#contents
+.contents
 {
-    text-align: left;
-    position: absolute;
+    display: contents;
+    text-align: center;
+    background: transparent;
 }
 
 .room-container 
@@ -42,8 +47,23 @@
     margin-left: 5px;
     border-radius: 6px;
     border: solid #98ff00 3px;
+    object-fit: cover;
+    background-position: 50%, 50%;
+    background-size: 100%, 100%;
+    background-repeat: no-repeat;
+    background-image: url('../img/b.gif');
     display: inline-block;
     position: absolute;
+}
+
+.room {
+    display: contents
+}
+
+h1, h2, a
+{
+    position: relative;
+    background: transparent;
 }
 
 .input-container 

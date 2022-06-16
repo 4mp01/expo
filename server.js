@@ -57,7 +57,7 @@ function getUserRooms(socket) {
   }, [])
 }
 
-server.listen( process.env.PORT || 9999, () => {
+server.listen(process.env.PORT || 9999, () => {
   console.log("Listening to port: "+process.env.PORT || 9999 )
 })
 
